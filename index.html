@@ -109,25 +109,25 @@
                             <form role="form" method="POST" action="https://formspree.io/f/xdoveaqr">
                                 <div class="form-group">
                                     <label for="nameTXT">Your Name</label>
-                                    <input type="text" id="nameTXT" name="name" required>
+                                    <input type="text" id="nameTXT" name="Name" required>
                                 </div>
     
                                 <div class="form-group">
                                     <label for="emailTXT">Email Address</label>
-                                    <input type="email" id="emailTXT" name="email" required>
+                                    <input type="email" id="emailTXT" name="Email" required>
                                 </div>
     
                                 <div class="form-group">
                                     <label for="subjectTXT">Subject</label>
-                                    <input type="text" id="subjectTXT" name="subject" required>
+                                    <input type="text" id="subjectTXT" name="Subject" required>
                                 </div>
     
                                 <div class="form-group">
                                     <label for="messageTXT">Message</label>
-                                    <textarea cols="36" rows="8" id="messageTXT" name="message" required></textarea>
+                                    <textarea cols="36" rows="8" id="messageTXT" name="Message" required></textarea>
                                 </div>
     
-                                <button type="submit" class="noir" id="submitBTN" name="submit">Send</button>
+                                <button type="submit" class="noir" id="submitBTN">Send</button>
                             </form>	
                         </div>
                         
@@ -143,27 +143,25 @@
             <!-- END OF CONTACT PAGE -->
     </body>
     <script>
-        $(document).ready(function(){
 
-$("nav a").on("click", function(event){
-    event.preventDefault();
-    $("nav").addClass("fixed");
-    id = ($(this).attr("href"));
-    scrollVertical = $(id).offset().top;
-
-    $("body, html").animate({scrollTop: scrollVertical});
-});
-
-$(document).on("scroll", function(){
-    secondPage = $("nav li:nth-child(2) a").attr("href");
-
-    if ( $("body").scrollTop() >= $("nav").height() )
-    {
+    $(document).ready(function(){
+        $("nav a").on("click", function(event){
+        event.preventDefault();
         $("nav").addClass("fixed");
-    } else {
-        $("nav").removeClass("fixed");
-    }
-});
+        id = ($(this).attr("href"));
+        scrollVertical = $(id).offset().top;
+        $("body, html").animate({scrollTop: scrollVertical});
+    });
+
+    $(document).on("scroll", function(){
+        secondPage = $("nav li:nth-child(2) a").attr("href");
+        if ( $("body").scrollTop() >= $("nav").height() )
+        {
+            $("nav").addClass("fixed");
+        } else {
+            $("nav").removeClass("fixed");
+        }
+    });
 
 });
     </script>
